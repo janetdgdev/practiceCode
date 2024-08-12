@@ -1,19 +1,10 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-//find the two integers that add up to the target
-//find the indices of the two integers
-//return an array
 var twoSum = function(nums, target) {
-    let result = []
+    let stored = {}
     for(let i = 0; i < nums.length; i++){
-        for(let j = 0; j < nums.length; j++){
-            if (nums[i] + nums[j] === target && !result.includes(i)){
-                result = [i,j]
-            }
+        let comp = target - nums[i]
+        if(comp in stored){
+            return [stored[comp], i]
         }
+        stored[nums[i]] = i
     }
-    return result
 };
