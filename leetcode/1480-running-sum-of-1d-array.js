@@ -9,4 +9,4 @@ var runningSum = function(nums) {
         result[i] = result[i - 1] + nums[i]
     }
     return result
-}
+};
